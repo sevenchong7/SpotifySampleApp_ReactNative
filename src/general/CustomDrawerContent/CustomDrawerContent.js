@@ -1,6 +1,6 @@
 // CustomDrawerContent.js
 import React from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, SafeAreaView } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, SafeAreaView, Platform, StatusBar } from 'react-native';
 import { Avatar } from '@rneui/themed';
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 import Feather from '@expo/vector-icons/Feather';
@@ -8,7 +8,7 @@ import AntDesign from '@expo/vector-icons/AntDesign';
 
 const CustomDrawerContent = ({ navigation }) => {
     return (
-        <SafeAreaView style={styles.container}>
+        <SafeAreaView style={styles.SafeAreaView}>
             <View style={styles.container}>
                 <View style={styles.avatarContainer}>
                     <Avatar rounded size={50} icon={{ name: 'user', type: 'feather' }} containerStyle={{ backgroundColor: 'black' }} />
@@ -41,6 +41,12 @@ const CustomDrawerContent = ({ navigation }) => {
 };
 
 const styles = StyleSheet.create({
+    SafeAreaView: {
+        flex: 1,
+        flexDirection: 'row',
+        alignItems: 'center',
+        paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0
+    },
     container: {
         flex: 1,
         paddingLeft: 20,

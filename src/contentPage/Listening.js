@@ -1,39 +1,41 @@
-import { SafeAreaView, ScrollView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { Platform, SafeAreaView, ScrollView, StatusBar, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import Ionicons from '@expo/vector-icons/Ionicons';
 import Entypo from '@expo/vector-icons/Entypo';
 import CurrentSong from "../general/Component/CurrentSong/currentSong";
 
 export default function Listening({ navigation }) {
-    return <SafeAreaView style={styles.container}>
-        <View style={styles.herdaerContainer}>
-            <View style={{ position: 'relative', flexDirection: 'row', marginBottom: 10, justifyContent: 'center' }}>
-                <View style={{ flexDirection: 'row', left: 0, position: 'absolute' }}>
-                    <TouchableOpacity style={styles.button} onPress={() => {
-                        navigation.reset({
-                            index: 0,
-                            routes: [{ name: 'Home' }],
-                        });
-                    }}>
-                        <Ionicons name="arrow-back" size={30} color="white" />
-                    </TouchableOpacity>
+    return <SafeAreaView style={styles.SafeAreaView}>
+        <View style={styles.container}>
+            <View style={styles.herdaerContainer}>
+                <View style={{ position: 'relative', flexDirection: 'row', marginBottom: 10, justifyContent: 'center' }}>
+                    <View style={{ flexDirection: 'row', left: 0, position: 'absolute' }}>
+                        <TouchableOpacity style={styles.button} onPress={() => {
+                            navigation.reset({
+                                index: 0,
+                                routes: [{ name: 'Home' }],
+                            });
+                        }}>
+                            <Ionicons name="arrow-back" size={30} color="white" />
+                        </TouchableOpacity>
+                    </View>
+                    <Text style={{ color: 'white', fontSize: 24, fontWeight: 'bold', }}>
+                        Recently played
+                    </Text>
                 </View>
-                <Text style={{ color: 'white', fontSize: 24, fontWeight: 'bold', }}>
-                    Recently played
-                </Text>
             </View>
-        </View>
-        <ScrollView style={styles.container}>
-            <View style={{ marginBottom: 20 }}>
-                <Text style={{ fontSize: 30, color: 'white', fontWeight: 'bold' }}>
-                    Date, Datetime
-                </Text>
-                {[...Array(50)].map((_, index) => (
-                    <RecentlyPlaylist key={index} />
-                ))}
+            <ScrollView style={styles.container}>
+                <View style={{ marginBottom: 20 }}>
+                    <Text style={{ fontSize: 30, color: 'white', fontWeight: 'bold' }}>
+                        Date, Datetime
+                    </Text>
+                    {[...Array(50)].map((_, index) => (
+                        <RecentlyPlaylist key={index} />
+                    ))}
+                </View>
+            </ScrollView>
+            <View style={{ marginTop: 50 }}>
+                <CurrentSong />
             </View>
-        </ScrollView>
-        <View style={{ marginTop: 50 }}>
-            <CurrentSong />
         </View>
     </SafeAreaView >
 }
@@ -64,6 +66,10 @@ const RecentlyPlaylist = () => {
 }
 
 const styles = StyleSheet.create({
+    SafeAreaView: {
+        flex: 1,
+        paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0
+    },
     container: {
         flex: 1,
         backgroundColor: 'black',

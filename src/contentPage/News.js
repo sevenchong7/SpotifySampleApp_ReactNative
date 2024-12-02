@@ -1,4 +1,4 @@
-import { Animated, SafeAreaView, ScrollView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { Animated, Platform, SafeAreaView, ScrollView, StatusBar, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import Ionicons from '@expo/vector-icons/Ionicons';
 import AntDesign from '@expo/vector-icons/AntDesign';
 import { color, ScreenWidth } from "@rneui/base";
@@ -23,7 +23,7 @@ export default function News({ navigation }) {
     // Define the threshold after which "What's New" will appear beside the back button
     const headerFadeThreshold = 80;
 
-    return <SafeAreaView style={styles.container}>
+    return <SafeAreaView style={styles.SafeAreaView}>
         <View style={styles.container}>
             <View style={{ position: 'relative', flexDirection: 'row', marginBottom: 10 }}>
                 <View style={{ flexDirection: 'row' }}>
@@ -123,9 +123,9 @@ export default function News({ navigation }) {
                     ))}
                 </View>
             </Animated.ScrollView>
-        </View>
-        <View style={{ marginTop: 50 }}>
-            <CurrentSong />
+            <View style={{ marginTop: 50 }}>
+                <CurrentSong />
+            </View>
         </View>
     </SafeAreaView >
 }
@@ -167,6 +167,10 @@ const MultipleSingleSong = () => {
 }
 
 const styles = StyleSheet.create({
+    SafeAreaView: {
+        flex: 1,
+        paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0
+    },
     container: {
         flex: 1,
         backgroundColor: 'black',
