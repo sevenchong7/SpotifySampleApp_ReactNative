@@ -1,4 +1,4 @@
-import { FlatList, Image, Modal, Platform, SafeAreaView, ScrollView, StatusBar, StyleSheet, Text, Touchable, TouchableHighlight, TouchableHighlightBase, TouchableOpacity, TouchableWithoutFeedback, View } from "react-native";
+import { Alert, FlatList, Image, Modal, Platform, SafeAreaView, ScrollView, StatusBar, StyleSheet, Text, Touchable, TouchableHighlight, TouchableHighlightBase, TouchableOpacity, TouchableWithoutFeedback, View } from "react-native";
 import { DrawerNavigation } from "../navigation/RootNavigation";
 import { useEffect, useState } from "react";
 import { Avatar, Button } from '@rneui/themed';
@@ -233,7 +233,7 @@ const styles = StyleSheet.create({
     },
     itemsrow: {
         flexDirection: 'row',
-        paddingRight: ScreenWidth / 3 - 125,
+        paddingRight: ScreenWidth / 3 - 120,
         // justifyContent: 'space-between',
         // marginBottom: 20,
         // flex: 1,
