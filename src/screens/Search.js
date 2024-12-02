@@ -1,4 +1,4 @@
-import { FlatList, Image, Modal, SafeAreaView, ScrollView, StyleSheet, Text, Touchable, TouchableHighlight, TouchableHighlightBase, TouchableOpacity, TouchableWithoutFeedback, View } from "react-native";
+import { FlatList, Image, Modal, Platform, SafeAreaView, ScrollView, StatusBar, StyleSheet, Text, Touchable, TouchableHighlight, TouchableHighlightBase, TouchableOpacity, TouchableWithoutFeedback, View } from "react-native";
 import { DrawerNavigation } from "../navigation/RootNavigation";
 import { useEffect, useState } from "react";
 import { Avatar, Button } from '@rneui/themed';
@@ -10,7 +10,7 @@ import SongCategory from "../general/Component/SongCategory/SongCategory";
 
 export default function Search({ navigation }) {
     return (
-        <SafeAreaView style={styles.container}>
+        <SafeAreaView style={styles.SafeAreaView}>
             <ScrollView style={styles.container} stickyHeaderIndices={[1]}>
                 <View >
                     <View style={styles.nav}>
@@ -51,21 +51,21 @@ export default function Search({ navigation }) {
 
 
 const styles = StyleSheet.create({
+
     container: {
         flex: 1,
         backgroundColor: 'black',
         paddingHorizontal: 10
     },
+    SafeAreaView: {
+        flex: 1,
+        flexDirection: 'row',
+        alignItems: 'center',
+        paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0
+    },
     row: {
         flexDirection: 'row',
         alignItems: 'center'
-    },
-    SafeAreaView: {
-        flexDirection: 'row',
-        backgroundColor: 'red',
-        alignItems: 'center',
-        backgroundColor: 'black'
-
     },
     nav: {
         flexDirection: 'row',

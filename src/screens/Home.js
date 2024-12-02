@@ -1,4 +1,4 @@
-import { FlatList, Image, Modal, SafeAreaView, ScrollView, StyleSheet, Text, Touchable, TouchableHighlight, TouchableHighlightBase, TouchableOpacity, TouchableWithoutFeedback, View } from "react-native";
+import { FlatList, Image, Modal, Platform, SafeAreaView, ScrollView, StatusBar, StyleSheet, Text, Touchable, TouchableHighlight, TouchableHighlightBase, TouchableOpacity, TouchableWithoutFeedback, View } from "react-native";
 import { DrawerNavigation } from "../navigation/RootNavigation";
 import { useEffect, useState } from "react";
 import { Avatar, Button } from '@rneui/themed';
@@ -19,7 +19,7 @@ export default function Home({ navigation }) {
     ];
 
     return (
-        <SafeAreaView style={styles.container}>
+        <SafeAreaView style={styles.SafeAreaView}>
             <View style={styles.container}>
                 <View style={{ flexDirection: 'row', marginLeft: 10, marginBottom: 5, alignItems: 'center' }}>
                     <TouchableOpacity onPress={() => navigation.openDrawer()} >
@@ -70,9 +70,7 @@ export default function Home({ navigation }) {
                     <CurrentSong />
                 </View>
             </View >
-
         </SafeAreaView >
-
     )
 }
 
@@ -82,11 +80,10 @@ const styles = StyleSheet.create({
         backgroundColor: 'black'
     },
     SafeAreaView: {
+        flex: 1,
         flexDirection: 'row',
-        backgroundColor: 'red',
         alignItems: 'center',
-        backgroundColor: 'black'
-
+        paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0
     },
     button: {
         borderWidth: 1,
