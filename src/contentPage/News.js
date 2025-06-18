@@ -2,7 +2,6 @@ import { Animated, Platform, SafeAreaView, ScrollView, StatusBar, StyleSheet, Te
 import Ionicons from '@expo/vector-icons/Ionicons';
 import AntDesign from '@expo/vector-icons/AntDesign';
 import { color, ScreenWidth } from "@rneui/base";
-import LinearGradient from "react-native-linear-gradient";
 import ButtonList from "../general/CustomButtom/ButtonList";
 import { useRef, useState } from "react";
 import FontAwesome6 from '@expo/vector-icons/FontAwesome6';

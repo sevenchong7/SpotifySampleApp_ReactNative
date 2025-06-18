@@ -24,49 +24,49 @@ export default function AddAccount({ navigation }) {
                 </TouchableOpacity>
             </View>
         </View>
-        <LinearGradient colors={['dimgray', 'black', 'black', 'black']} style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-            <View style={{ width: 100, height: 100, backgroundColor: 'white', borderRadius: 100 }}>
-            </View>
-            <View style={{ marginTop: 20 }}>
-                <Text style={{ color: 'white', textAlign: 'center', fontSize: 38, fontWeight: 'bold' }}>
-                    Million of songs.{"\n"}
-                    Free on XXXX.
+        {/* <LinearGradient colors={['dimgray', 'black', 'black', 'black']} style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}> */}
+        <View style={{ width: 100, height: 100, backgroundColor: 'white', borderRadius: 100 }}>
+        </View>
+        <View style={{ marginTop: 20 }}>
+            <Text style={{ color: 'white', textAlign: 'center', fontSize: 38, fontWeight: 'bold' }}>
+                Million of songs.{"\n"}
+                Free on XXXX.
+            </Text>
+        </View>
+        <View style={{ marginTop: 80 }}>
+            <TouchableOpacity style={{ backgroundColor: 'lime', width: ScreenWidth - 50, alignItems: 'center', borderRadius: 30 }}>
+                <Text style={{ color: 'black', fontSize: 20, fontWeight: 'bold', marginVertical: 15 }}>
+                    Sign up for free
                 </Text>
-            </View>
-            <View style={{ marginTop: 80 }}>
-                <TouchableOpacity style={{ backgroundColor: 'lime', width: ScreenWidth - 50, alignItems: 'center', borderRadius: 30 }}>
-                    <Text style={{ color: 'black', fontSize: 20, fontWeight: 'bold', marginVertical: 15 }}>
-                        Sign up for free
-                    </Text>
-                </TouchableOpacity>
-            </View>
-            <View style={{ marginTop: 10 }}>
-                <TouchableOpacity style={{ width: ScreenWidth - 50, alignItems: 'center', borderRadius: 30, borderColor: 'gray', borderWidth: 1 }}>
-                    <Text style={{ color: 'white', fontSize: 20, fontWeight: 'bold', marginVertical: 15 }}>
-                        Continue with Google
-                    </Text>
-                </TouchableOpacity>
-            </View>
-            <View style={{ marginTop: 10 }}>
-                <TouchableOpacity style={{ width: ScreenWidth - 50, alignItems: 'center', borderRadius: 30, borderColor: 'gray', borderWidth: 1 }}>
-                    <Text style={{ color: 'white', fontSize: 20, fontWeight: 'bold', marginVertical: 15 }}>
-                        Continue with Facebook
-                    </Text>
-                </TouchableOpacity>
-            </View>
-            <View style={{ marginTop: 40 }}>
-                <Text style={{ color: 'white', fontSize: 20, fontWeight: 'bold' }}>
-                    Log in
+            </TouchableOpacity>
+        </View>
+        <View style={{ marginTop: 10 }}>
+            <TouchableOpacity style={{ width: ScreenWidth - 50, alignItems: 'center', borderRadius: 30, borderColor: 'gray', borderWidth: 1 }}>
+                <Text style={{ color: 'white', fontSize: 20, fontWeight: 'bold', marginVertical: 15 }}>
+                    Continue with Google
                 </Text>
-            </View>
-            <View style={{ marginTop: 80 }}>
-                <Text style={{ color: 'white', fontSize: 16, textAlign: 'center' }}>
-                    While you are signed in, anyone else using {"\n"}
-                    this device will be able to access your{"\n"}
-                    account.
+            </TouchableOpacity>
+        </View>
+        <View style={{ marginTop: 10 }}>
+            <TouchableOpacity style={{ width: ScreenWidth - 50, alignItems: 'center', borderRadius: 30, borderColor: 'gray', borderWidth: 1 }}>
+                <Text style={{ color: 'white', fontSize: 20, fontWeight: 'bold', marginVertical: 15 }}>
+                    Continue with Facebook
                 </Text>
-            </View>
-        </LinearGradient>
+            </TouchableOpacity>
+        </View>
+        <View style={{ marginTop: 40 }}>
+            <Text style={{ color: 'white', fontSize: 20, fontWeight: 'bold' }}>
+                Log in
+            </Text>
+        </View>
+        <View style={{ marginTop: 80 }}>
+            <Text style={{ color: 'white', fontSize: 16, textAlign: 'center' }}>
+                While you are signed in, anyone else using {"\n"}
+                this device will be able to access your{"\n"}
+                account.
+            </Text>
+        </View>
+        {/* </LinearGradient> */}
     </SafeAreaView >
 }
 
@@ -76,7 +76,10 @@ const styles = StyleSheet.create({
         backgroundColor: 'black',
         color: 'white',
         fontStyle: { color: 'white' },
-        padding: 10
+        padding: 10,
+        textAlign: 'center',
+        justifyContent: 'center',
+        alignItems: 'center'
     },
     button: {
         // flex: 1,
